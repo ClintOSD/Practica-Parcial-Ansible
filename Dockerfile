@@ -6,3 +6,5 @@ RUN useradd -ms /bin/bash ansible && echo 'ansible:ansible' | chpasswd && adduse
 RUN mkdir /var/run/sshd
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
+
+RUN echo 'ansible ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
